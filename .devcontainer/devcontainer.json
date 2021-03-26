@@ -1,0 +1,25 @@
+{
+	"name": "Ubuntu18.04",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": "..",
+		"args": {"-t": "my_ubuntu18:latest"}
+	},
+
+	"settings": { 
+		"terminal.integrated.shell.linux": "/bin/bash"
+	},
+
+	"extensions": [],
+
+	"workspaceFolder": "/home",
+	"workspaceMount": "type=bind,source=${localWorkspaceFolder},target=/home/project",
+
+	"runArgs": [
+		"-it",
+		"--rm",
+		"--name=ubuntu18_base"
+	]
+
+	// "postCreateCommand": "sudo pip install -r requirements.txt,
+}
